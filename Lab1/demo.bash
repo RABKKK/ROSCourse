@@ -1,9 +1,5 @@
 #!/bin/bash
 
-roslaunch roslaunch rostopic pub /cmd_vel
-
-gnome-terminal
-
 ARG1=$1
 
 function help(){
