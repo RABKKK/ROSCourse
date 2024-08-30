@@ -54,27 +54,22 @@ class ReadSensor():
     def get_laser_full(self):
         time.sleep(1)
         return self.laser_msg.ranges
-        
-    def filter_datinrang(self, xyrange):
-        self.xy=[[],[]]
-        self.mean=[0,0]
-        cnt=0        
-        for i in range(len(self.laser_msg.ranges)):
-          temp=[self.laser_msg.ranges[i]*math.cos(i*self.laser_msg.angle_increment), self.laser_msg.ranges[i]*math.sin(i*self.laser_msg.angle_increment)]
-          if temp[0]>xyrange[0] and temp[0]<xyrange[1] and temp[1]>xyrange[2] and temp[1]<xyrange[3]:
-            self.xy=[self.xy[0]+[temp[0]],self.xy[1]+[temp[1]]]
-            self.mean=[self.mean[0]+temp[0],self.mean[1]+temp[1]]
-            cnt+=1
-        self.mean=[self.mean[0]/cnt,self.mean[1]/cnt]
-        return [self.xy,self.mean]  
-        
+  
+    #CHeck the earlier definitions of variables and methods to understand the process    
+          
     #Step 0    
     #Define method to determine the data in the region of interest without 'Inf' etc and return it as a list
-    #Declare variables to store the filtered data in the ROI
+    #Declare variables (self.<varname>) to store the filtered data in the ROI
+    #steps
+    #Define the varibles for filtered sensor reading
+    #loop thorugh the range to determine if the measurement is in the range and stor it in the list of filtered sensor reading
+    #To add new element to the list use <listvarname>.append or else <listvarname>=<listvarname>+<listvarname2>
+    #Will be a good idea to store the sum of the elements and then divide it by the length of the list to calculate the mean as well and store it as another varible (self.<varname>)
+    #return the list with x and y data as a single list having 2 lists inside it 
     
     #Step -1
     #Define method to return the mean of the filtered data 
-
+    #Calculate the mean value as nother variable or return the variable calculated earlier 
 
 
 
