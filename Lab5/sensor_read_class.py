@@ -56,25 +56,8 @@ class ReadSensor():
         return self.laser_msg.ranges
         
     def filter_datinrang(self, xyrange):
-        self.xy=[[],[]]
-        self.mean=[0,0]
-        cnt=0        
-        for i in range(len(self.laser_msg.ranges)):
-          temp=[self.laser_msg.ranges[i]*math.cos(i*self.laser_msg.angle_increment), self.laser_msg.ranges[i]*math.sin(i*self.laser_msg.angle_increment)]
-          if temp[0]>xyrange[0] and temp[0]<xyrange[1] and temp[1]>xyrange[2] and temp[1]<xyrange[3]:
-            self.xy=[self.xy[0]+[temp[0]],self.xy[1]+[temp[1]]]
-            self.mean=[self.mean[0]+temp[0],self.mean[1]+temp[1]]
-            cnt+=1
-        if cnt:    
-          self.mean=[self.mean[0]/cnt,self.mean[1]/cnt]
-        else:  
-          self.mean=[0,0]
-          print('No values in range!!!')
+
         return [self.xy,self.mean]  
-    def printalldetails(self):
-        print("Minimum angle",self.laser_msg.angle_min)
-        print("Maximum angle",self.laser_msg.angle_max)        
-        print("Angle increment",self.laser_msg.angle_increment)                
 
 
 
