@@ -10,7 +10,7 @@ class ReadSensor():
     def __init__(self, robot_name="turtlebot"):
         rospy.init_node('scanner_measurement_node', anonymous=True)
 
-        rospy.loginfo("Hokuyo Scanner using hokuyo_node...")      
+        rospy.loginfo("Scanner using ydlidar_lidar_publisher...")      
   
         self._check_laser_ready()
 
@@ -62,7 +62,7 @@ class ReadSensor():
     #Declare variables (self.<varname>) to store the filtered data in the ROI
     #steps
     #Define the varibles for filtered sensor reading
-    #loop thorugh the range to determine if the measurement is in the range and stor it in the list of filtered sensor reading
+    #loop through the range to determine if the measurement is in the range and store it in the list of filtered sensor reading
     #To add new element to the list use <listvarname>.append or else <listvarname>=<listvarname>+<listvarname2>
     #Will be a good idea to store the sum of the elements and then divide it by the length of the list to calculate the mean as well and store it as another varible (self.<varname>)
     #return the list with x and y data as a single list having 2 lists inside it 

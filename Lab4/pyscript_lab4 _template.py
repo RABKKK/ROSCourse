@@ -2,7 +2,7 @@ from sensor_read_class import ReadSensor
 #from matplotlib import pyplot as plt#optional For ploting and visualizing data
 #Additional libraries that may be used (try not use so many libraries) only what is required to ensure the program has minimum requirements
 
-#Refer to Lab 2 and Lab 2 tasks to understand how objects are defined and Methods are called. 
+#Refer to Lab 2 and Lab 3 tasks to understand how objects are defined and Methods are called. 
 #Also check the class defined in sensor_read_class.py file
 
 #Step 0
@@ -31,4 +31,4 @@ xyrange=[0, 1, -1, 1]
 	#Print the Mean value in a suitable format "Mean of the scan in the ROI is" in every iteration
 
 #Optional
-#Plot and show both the mean and the data in the regions of itnerest using suitable markers.
+#Plot and show both the mean and the data in the regions of interest using suitable markers.
